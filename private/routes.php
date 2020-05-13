@@ -8,11 +8,8 @@ SimpleRouter::setDefaultNamespace( 'Website\Controllers' );
 
 SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
-	// START: Zet hier al eigen routes
-	// Lees de docs, daar zie je hoe je routes kunt maken: https://github.com/skipperbent/simple-php-router#routes
-
 	SimpleRouter::get('/', 'websitecontroller@home')->name('home');
-	// STOP: Tot hier al je eigen URL's zetten
+	SimpleRouter::get('/home', 'websitecontroller@home')->name('home');
 
 	SimpleRouter::get('/not-found', function() {
 		http_response_code(404);
