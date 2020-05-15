@@ -14,7 +14,7 @@ body {
 h1 {
     margin: 0 auto;
     width: 2em;
-    margin-top: 10vh;
+    margin-top: 150px;
 
     background: white;
     border-radius: .1em;
@@ -39,29 +39,6 @@ p {
     font-family: 'Segoe UI', sans-serif;
     font-weight: normal;
     font-size: 2em;   
-}
-
-#back {
-    display: block;
-    margin: 0 auto;
-    margin-top: 5vh;
-    width: 15em;
-
-    padding-top: 1em;
-    padding-bottom: 1em;
-
-    background: white;
-    border-radius: .5em;
-
-    color: rgb(51, 102, 255);
-    text-align: center;
-    text-decoration: none;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: bolder;
-}
-
-#back:hover {
-    text-decoration: underline;
 }
 
 #contact {

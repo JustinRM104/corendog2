@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Overlock:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+footer {
+    width: 100%;
+    margin-top: 25vh;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    background: rgb(218, 218, 218);
+    text-align: center;
+}
+
+footer h3 {
+    margin: 0;
+    color: rgb(51, 102, 204);
+    font-family: 'Overlock', sans-serif;
+    font-weight: 1000;
+    font-size: 50px;
+}
+
+footer p {
+    font-family: sans-serif;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer ul li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+footer ul li a {
+    padding: 0;
+    color: rgb(78, 78, 78);
+    font-family: sans-serif;
+    font-weight: bolder;
+    text-decoration: none;
+    margin: .5em;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}

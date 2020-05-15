@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+#contactTitle {
+    margin: 0;
+    margin-top: 5em;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: rgb(51, 102, 204);
+    font-size: 3em;
+}
+
+#contactSub {
+    margin: 0;
+    margin-top: 1em;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(78, 78, 78);
+    font-size: 1.25em;
+    font-weight: lighter;
+}
+
+#contactForm {
+    margin: 0 auto;
+    margin-top: 3em;
+    width: 40%;
+    min-width: 25em;
+    border: 0;
+    border-radius: .5em;
+    box-shadow: 0px 0px 2px grey;
+    text-align: center;
+}
+
+#contactForm input {
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: block;
+    width: calc(100% - 2em);
+    min-width: calc(100% - 2em);
+    max-width: calc(100% - 2em);
+    padding: 10px;
+    font-size: 20px;
+}
+
+#contactForm textarea {
+    height: 7.5em;
+    min-height: 7.5em;
+    max-height: 15em;
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: block;
+    width: calc(100% - 2em);
+    min-width: calc(100% - 2em);
+    max-width: calc(100% - 2em);
+    padding: 10px;
+    font-size: 20px;
+}
+
+#sendContact {
+    display: block;
+    float: left;
+    margin: .5em;
+    width: 10em;
+    background: rgb(102, 153, 255);
+    color: white;
+    border: 0;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    opacity: 0.8;
+    transition: .2s;
+    border-radius: 5px;
+}
+
+#sendContact:hover {
+    opacity: 1;
+}
+
+.g-recaptcha {
+    margin: .5em;
+    display: block;
+}

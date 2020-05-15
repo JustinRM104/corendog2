@@ -10,6 +10,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	SimpleRouter::get('/', 'websitecontroller@home')->name('home');
 	SimpleRouter::get('/home', 'websitecontroller@home')->name('home');
+	SimpleRouter::get('/contact', 'websitecontroller@contact')->name('contact');
 
 	SimpleRouter::get('/not-found', function() {
 		http_response_code(404);
