@@ -41,6 +41,7 @@
     max-width: calc(100% - 2em);
     padding: 10px;
     font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #contactForm textarea {
@@ -56,6 +57,7 @@
     max-width: calc(100% - 2em);
     padding: 10px;
     font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #sendContact {

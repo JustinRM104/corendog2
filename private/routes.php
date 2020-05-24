@@ -11,6 +11,9 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get('/', 'websitecontroller@home')->name('home');
 	SimpleRouter::get('/home', 'websitecontroller@home')->name('home');
 	SimpleRouter::get('/contact', 'websitecontroller@contact')->name('contact');
+	SimpleRouter::get('/privacy', 'websitecontroller@privacy')->name('privacy');
+	SimpleRouter::get('/inschrijven', 'websitecontroller@login')->name('login');
+	SimpleRouter::get('/login', 'websitecontroller@login')->name('login');
 
 	SimpleRouter::get('/not-found', function() {
 		http_response_code(404);

@@ -24,4 +24,18 @@ class WebsiteController {
 		echo $template_engine->render('contact');
 
 	}
+
+	public function privacy() {
+		$template_engine = get_template_engine();	
+		echo $template_engine->render('privacy');
+
+	}
+
+	public function login() {
+		$template_engine = get_template_engine();	
+		echo $template_engine->render('login');
+		
+		
+
+	}
 }

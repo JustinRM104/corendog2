@@ -10,7 +10,6 @@
     <title>Niet gevonden - Corendog</title>
 </head>
 <body>
-    <?php echo $template_engine->render('nav'); ?>
     <h1>404</h1>
     <p>Oeps de pagina is niet gevonden! Denkt u dat er iets fout is aan onze kant? Neem <a id="contact" href="<?php echo site_url('/contact') ?>">contact</a> met ons op.</p>
 </body>
