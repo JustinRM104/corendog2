@@ -3,7 +3,7 @@
 <!-- Title -->
 
 <?php $this->start('title'); ?>
-<?php echo "Contact"; ?>
+Contact
 <?php $this->stop(); ?>
 
 <!-- Navigation -->
