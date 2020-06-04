@@ -31,11 +31,9 @@ class WebsiteController {
 
 	}
 
-	public function login() {
+	public function over() {
 		$template_engine = get_template_engine();	
-		echo $template_engine->render('login');
-		
-		
+		echo $template_engine->render('over');
 
 	}
 }

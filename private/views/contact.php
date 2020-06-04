@@ -15,6 +15,7 @@ Contact
     <ul>
         <li><a href="<?php echo site_url('/home') ?>">Vind vrijwilliger</a></li>
         <li><a href="<?php echo site_url('/contact') ?>">Contact</a></li>
+        <li><a href="<?php echo site_url('/login') ?>">Login</a></li>
         <li><a href="<?php echo site_url('/inschrijven') ?>">Word vrijwilliger</a></li>
     </ul>
 </nav>
@@ -45,6 +46,7 @@ Contact
     <h3>CORENDOG</h3>
     <p>© Corendon 2020</p>
     <ul>
+        <li><a href="<?php echo site_url('/over') ?>">Over</a></li>
         <li><a href="<?php echo site_url('/contact') ?>">Contact</a></li>
         <li><a href="<?php echo site_url('/privacy') ?>">Privacy verklaring</a></li>
     </ul>

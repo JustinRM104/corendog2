@@ -1,0 +1,12 @@
+#over {
+    margin: 0 auto;
+    margin-top: 2em;
+    width: 40%;
+    min-width: 20em;
+    border: 0;
+    border-radius: .5em;
+    box-shadow: 0px 0px 2px grey;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1em;
+}

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="<?php echo site_url('/css/footer.css') ?>">
     <link rel="stylesheet" href="<?php echo site_url('/css/contact.css') ?>">
     <link rel="stylesheet" href="<?php echo site_url('/css/privacy.css') ?>">
+    <link rel="stylesheet" href="<?php echo site_url('/css/login-register.css') ?>">
+    <link rel="stylesheet" href="<?php echo site_url('/css/over.css') ?>">
 
     <title> <?php echo $this->section('title'); ?> - Corendog</title>
 </head>

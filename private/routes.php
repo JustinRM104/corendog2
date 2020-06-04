@@ -12,8 +12,12 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get('/home', 'websitecontroller@home')->name('home');
 	SimpleRouter::get('/contact', 'websitecontroller@contact')->name('contact');
 	SimpleRouter::get('/privacy', 'websitecontroller@privacy')->name('privacy');
-	SimpleRouter::get('/inschrijven', 'websitecontroller@login')->name('login');
-	SimpleRouter::get('/login', 'websitecontroller@login')->name('login');
+	SimpleRouter::get('/over', 'websitecontroller@over')->name('over');
+
+	SimpleRouter::get('/inschrijven', 'registercontroller@register')->name('register.form');
+	SimpleRouter::post('/inschrijven/verwerken', 'registercontroller@registerProcess')->name('register.process');
+	SimpleRouter::get('/login', 'registercontroller@login')->name('login.form');
+	SimpleRouter::post('/login/verwerken', 'registercontroller@login')->name('login.process');
 
 	SimpleRouter::get('/not-found', function() {
 		http_response_code(404);
