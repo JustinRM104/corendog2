@@ -16,6 +16,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
 	SimpleRouter::get('/inschrijven', 'registercontroller@register')->name('register.form');
 	SimpleRouter::post('/inschrijven/verwerken', 'registercontroller@registerProcess')->name('register.process');
+	SimpleRouter::get('/inschrijven/voltooid', 'registercontroller@registerSucces')->name('register.succes');
 	SimpleRouter::get('/login', 'registercontroller@login')->name('login.form');
 	SimpleRouter::post('/login/verwerken', 'registercontroller@login')->name('login.process');
 

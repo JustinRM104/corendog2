@@ -84,3 +84,15 @@
     margin: .5em;
     display: block;
 }
+
+#contactSub a {
+    padding: 0;
+    color: rgb(10, 10, 10);
+    font-family: sans-serif;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+#contactSub a:hover {
+    text-decoration: underline;
+}

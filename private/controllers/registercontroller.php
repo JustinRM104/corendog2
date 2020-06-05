@@ -51,4 +51,9 @@ class registercontroller {
 		$template_engine = get_template_engine();	
 		echo $template_engine->render('inschrijven', ['errors' => $errors]);
 	}
+
+	public function registerSucces() {
+		$template_engine = get_template_engine();	
+		echo $template_engine->render('registered');	
+	}
 }
