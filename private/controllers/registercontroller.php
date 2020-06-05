@@ -42,14 +42,13 @@ class registercontroller {
 
 			if ($succes) {
 				echo "Gelukt!";
+				exit;
 			} else {
-				echo "Niet gelukt!";
+				$errors['unknown'] = "Er is een onbekende fout ongetreden.";
 			}
 		}
-		else {
-			foreach ($errors as $key => $value) {
-				echo $value;
-			}
-		}
+
+		$template_engine = get_template_engine();	
+		echo $template_engine->render('inschrijven', ['errors' => $errors]);
 	}
 }

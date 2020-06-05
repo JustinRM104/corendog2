@@ -17,11 +17,11 @@
     <div class="lr_form_group">
         <div>
             <h4>Voornaam<span>*</span></h4>
-            <input type="text" name="firstname" autocomplete="given-name" placeholder="Voornaam" required>
+            <input type="text" name="firstname" autocomplete="given-name" placeholder="Voornaam" required value="<?php echo input('firstname'); ?>">
         </div>
         <div>
             <h4>Achternaam<span>*</span></h4>
-            <input type="text" name="lastname" autocomplete="family-name" placeholder="Achternaam" required>
+            <input type="text" name="lastname" autocomplete="family-name" placeholder="Achternaam" required value="<?php echo input('lastname'); ?>">
         </div>
         <div>
             <h4>Leeftijd<span>*</span></h4>
@@ -49,14 +49,24 @@
     <div class="lr_form_group">
         <div>
             <h4>Email<span>*</span></h4>
-            <input type="email" name="email" autocomplete="email" placeholder="Email" required>
+            <input type="email" name="email" autocomplete="email" placeholder="Email" required value="<?php echo input('email'); ?>">
+            <?php if (isset($errors['email'])) : ?>
+                <p style="color: red; font-family: sans-serif;"><?php echo $errors['email']; ?></p> 
+            <?php endif; ?>
         </div>
         <div>
             <h4>Wachtwoord<span>*</span></h4>
             <input type="password" name="password" autocomplete="new-password" class="hasMore" placeholder="Wachtwoord" required>
             <input type="password" name="confirmed-password" autocomplete="off" placeholder="Bevestig Wachtwoord" required>
+            <?php if (isset($errors['password'])) : ?>
+                <p style="color: red; font-family: sans-serif;"><?php echo $errors['password']; ?></p> 
+            <?php endif; ?>
         </div>
     </div>
+
+    <?php if (isset($errors['unknown'])) : ?>
+        <p style="color: red; font-family: sans-serif;"><?php echo $errors['unknown']; ?></p> 
+    <?php endif; ?>
 
     <input type="submit" value="Voltooi registratie" class="submit">
 </form>

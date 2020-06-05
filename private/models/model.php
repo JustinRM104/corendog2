@@ -7,9 +7,7 @@ function cssCheck($data) {
         foreach ($newData as $key => $value) {
             $key = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
         }
-    } else {
-        $newData = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
-    }
+    } else { $newData = htmlspecialchars($data, ENT_QUOTES, 'UTF-8'); }
 
     return $newData;
 }
@@ -17,17 +15,9 @@ function cssCheck($data) {
 function checkPassword($password, $confirmPassword) {
     $error = NULL;
 
-    if (strlen($password) < 6) {
-        $error = "Het wachtwoord moet minimaal 6 karakters bevatten.";
-    }
-
-    if ($password != $confirmPassword) {
-        $error = "Ingevoerde wachtwoorden komen niet overeen.";
-    }
-
-    if ($error) {
-        return $error;
-    }
+    if (strlen($password) < 6) { $error = "Het wachtwoord moet minimaal 6 karakters bevatten."; }
+    if ($password != $confirmPassword) { $error = "Ingevoerde wachtwoorden komen niet overeen."; }
+    if ($error) { return $error; }
 
     return false;
 }
@@ -39,10 +29,7 @@ function emailAvailable($email) {
         $stmt = $connection->prepare($sql);
         $stmt->execute(['email' => $email]);
     
-        if ($stmt->rowCount() >= 1) {
-            return true;
-        }
-    
+        if ($stmt->rowCount() >= 1) { return true; }
         return false;
     } catch (\PDOException $e) {
         return true;

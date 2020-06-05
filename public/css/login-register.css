@@ -98,3 +98,7 @@
 .lr_form .submit:hover {
     opacity: 1;
 }
+
+.formError {
+    color: red;
+}
