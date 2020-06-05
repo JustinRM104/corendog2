@@ -17,11 +17,11 @@
     <div class="lr_form_group">
         <div>
             <h4>Voornaam<span>*</span></h4>
-            <input type="text" name="firstname" autocomplete="given-name" required>
+            <input type="text" name="firstname" autocomplete="given-name" placeholder="Voornaam" required>
         </div>
         <div>
             <h4>Achternaam<span>*</span></h4>
-            <input type="text" name="lastname" autocomplete="family-name" required>
+            <input type="text" name="lastname" autocomplete="family-name" placeholder="Achternaam" required>
         </div>
         <div>
             <h4>Leeftijd<span>*</span></h4>
@@ -49,11 +49,11 @@
     <div class="lr_form_group">
         <div>
             <h4>Email<span>*</span></h4>
-            <input type="email" name="email" autocomplete="email" required>
+            <input type="email" name="email" autocomplete="email" placeholder="Email" required>
         </div>
         <div>
             <h4>Wachtwoord<span>*</span></h4>
-            <input type="password" name="password" autocomplete="new-password" class="hasMore" required>
+            <input type="password" name="password" autocomplete="new-password" class="hasMore" placeholder="Wachtwoord" required>
             <input type="password" name="confirmed-password" autocomplete="off" placeholder="Bevestig Wachtwoord" required>
         </div>
     </div>

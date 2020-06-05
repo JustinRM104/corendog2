@@ -19,52 +19,36 @@ class registercontroller {
 			'email' => filter_var($_POST["email"], FILTER_VALIDATE_EMAIL),
 			'password' => trim($_POST["password"]),
 			'confirmPassword' => trim($_POST["confirmed-password"]),
-
 			'firstname' => trim($_POST["firstname"]),
 			'lastname' => trim($_POST["lastname"]),
 			'date-born' => trim($_POST["date-born"]),
 			'location' => trim($_POST["location"]),
 		];
-
-		foreach ($data as $key => $value) {
-			$key = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
-		}
+		$data = cssCheck($data);
 
 		// Check email
 		if ($data['email'] === false) { $errors['email'] = "Het email adress dat u heeft ingevoerd is ongeldig."; }
-
-		// Check password
-		if (empty($data['password']) ||  strlen($data['password'] < 6) ) {
-			$errors['password'] = "Het wachtwoord moet minimaal 6 karakters bevatten.";
-		} else {
-			if ($data['password'] != $data['confirmPassword']) {
-				$errors['password'] = "Ingevoerde wachtwoorden komen niet overeen.";
-			}
+		if (!isset($errors['email'])) { 
+			$emailCheck = emailAvailable($data['email']);
+			if ($emailCheck) { $errors['email'] = "Het email adress dat u heeft ingevoerd is al in gebruik."; }
 		}
 
+		// Check password
+		$passwordCheck = checkPassword($data['password'], $data['confirmPassword']);
+		if ($passwordCheck !== false) { $errors['password'] = $passwordCheck; }
+
 		if (count($errors) === 0) {
-			$connection = dbConnect();
-			$sql = "SELECT * FROM `users` WHERE `email` = :email";
-			$stmt = $connection->prepare($sql);
-			$stmt->execute(['email' => $data['email']]);
+			$succes = createUser($data);
 
-			if ($stmt->rowCount() === 0) {
-				$sql = "INSERT INTO `users` (`email`, `password`, `firstname`, `lastname`, `location`) VALUES (:email, :password, :firstname, :lastname, :location)";
-				$stmt = $connection->prepare($sql);
-				$hashedPassword = password_hash($data['password'], PASSWORD_DEFAULT);
-				$params = [
-					'email' => $data['email'],
-					'password' => $hashedPassword,
-					'firstname' => $data['firstname'],
-					'lastname' => $data['lastname'],
-					'location' => $data['location']
-				];
-
-				$stmt->execute($params);
-				echo "done";
-				exit;
+			if ($succes) {
+				echo "Gelukt!";
 			} else {
-				$errors['email'] = "Email is al in gebruik.";
+				echo "Niet gelukt!";
+			}
+		}
+		else {
+			foreach ($errors as $key => $value) {
+				echo $value;
 			}
 		}
 	}
