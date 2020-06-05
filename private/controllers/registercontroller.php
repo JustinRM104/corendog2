@@ -41,8 +41,7 @@ class registercontroller {
 			$succes = createUser($data);
 
 			if ($succes) {
-				echo "Gelukt!";
-				exit;
+				redirect(url('register.succes'));
 			} else {
 				$errors['unknown'] = "Er is een onbekende fout ongetreden.";
 			}
