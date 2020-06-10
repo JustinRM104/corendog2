@@ -6,25 +6,11 @@
 <?php echo "Privacy"; ?>
 <?php $this->stop(); ?>
 
-<!-- Navigation -->
-
-<?php $this->start('nav'); ?>
-
-<nav>
-    <h2><a href="<?php echo site_url('/home') ?>">CORENDOG</a></h2>
-    <ul>
-        <li><a href="<?php echo site_url('/home') ?>">Vind vrijwilliger</a></li>
-        <li><a href="<?php echo site_url('/contact') ?>">Contact</a></li>
-        <li><a href="<?php echo site_url('/login') ?>">Login</a></li>
-        <li><a href="<?php echo site_url('/inschrijven') ?>">Word vrijwilliger</a></li>
-    </ul>
-</nav>
-
-<?php $this->stop(); ?>
-
 <!-- Content -->
 
 <?php $this->start('cont'); ?>
+
+<?php if ($showNavigation) { include('nav.php'); } ?>
 
 <h2 id="title">Privacy verklaring</h2>
 
@@ -49,21 +35,7 @@
     <p>corendog.nl plaatst cookies bij bezoekers. Dat doen we om informatie te verzamelen over de pagina’s die gebruikers op onze website bezoeken, om bij te houden hoe vaak bezoekers terug komen en om te zien welke pagina’s het goed doen op de website. Ook houden we bij welke informatie de browser deelt.</p>
 </div>
 
-<?php $this->stop(); ?>
-
-<!-- Footer -->
-
-<?php $this->start('footer'); ?>
-
-<footer>
-    <h3>CORENDOG</h3>
-    <p>© Corendon 2020</p>
-    <ul>
-        <li><a href="<?php echo site_url('/over') ?>">Over</a></li>
-        <li><a href="<?php echo site_url('/contact') ?>">Contact</a></li>
-        <li><a href="<?php echo site_url('/privacy') ?>">Privacy verklaring</a></li>
-    </ul>
-</footer>
+<?php if ($showFooter) { include('footer.php'); } ?>
 
 <?php $this->stop(); ?>
 

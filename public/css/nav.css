@@ -12,6 +12,7 @@ nav {
     border-bottom: 2px solid rgb(230, 230, 230);
 
     background: white;
+    z-index: 10;
 }
 
 nav h2 {
@@ -66,5 +67,19 @@ nav ul li:last-child a {
     background: rgb(102, 153, 255);
     color: white;
     border-radius: 5em;
-    border-right: 0px solid rgb(200, 200, 200);  
+    border-right: 0px solid rgb(200, 200, 200);
+    transition: .4s; 
+}
+
+nav ul li button {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+nav ul li button:hover {
+    text-decoration: underline;
 }

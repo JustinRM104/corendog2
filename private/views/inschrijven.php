@@ -10,6 +10,8 @@
 
 <?php $this->start('cont'); ?>
 
+<?php if ($showNavigation) { include('nav.php'); } ?>
+
 <h1 id="loginTitle">Word een vrijwilliger!</h1>
 <p id="loginSub">Maak een gratis account aan en help mensen!</p>
 
@@ -51,7 +53,7 @@
             <h4>Email<span>*</span></h4>
             <input type="email" name="email" autocomplete="email" placeholder="Email" required value="<?php echo input('email'); ?>">
             <?php if (isset($errors['email'])) : ?>
-                <p style="color: red; font-family: sans-serif;"><?php echo $errors['email']; ?></p> 
+                <p style="color: red; font-family: sans-serif; margin: 0; padding: 0;"><?php echo $errors['email']; ?></p> 
             <?php endif; ?>
         </div>
         <div>
@@ -59,16 +61,20 @@
             <input type="password" name="password" autocomplete="new-password" class="hasMore" placeholder="Wachtwoord" required>
             <input type="password" name="confirmed-password" autocomplete="off" placeholder="Bevestig Wachtwoord" required>
             <?php if (isset($errors['password'])) : ?>
-                <p style="color: red; font-family: sans-serif;"><?php echo $errors['password']; ?></p> 
+                <p style="color: red; font-family: sans-serif; margin: 0; padding: 0;"><?php echo $errors['password']; ?></p> 
             <?php endif; ?>
         </div>
     </div>
 
     <?php if (isset($errors['unknown'])) : ?>
-        <p style="color: red; font-family: sans-serif;"><?php echo $errors['unknown']; ?></p> 
+        <p style="color: red; font-family: sans-serif; margin: 0; padding: 0;"><?php echo $errors['unknown']; ?></p> 
     <?php endif; ?>
 
     <input type="submit" value="Voltooi registratie" class="submit">
+
+    <p class="extra">Al een account? <a href="<?php echo url('login.form') ?>">Login</a> hier. Of ga terug naar <a href="<?php echo url('home') ?>">home.</a></p>
 </form>
+
+<?php if ($showFooter) { include('footer.php'); } ?>
 
 <?php $this->stop(); ?>

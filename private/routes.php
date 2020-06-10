@@ -8,17 +8,21 @@ SimpleRouter::setDefaultNamespace( 'Website\Controllers' );
 
 SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 
-	SimpleRouter::get('/', 'websitecontroller@home')->name('home');
-	SimpleRouter::get('/home', 'websitecontroller@home')->name('home');
-	SimpleRouter::get('/contact', 'websitecontroller@contact')->name('contact');
-	SimpleRouter::get('/privacy', 'websitecontroller@privacy')->name('privacy');
-	SimpleRouter::get('/over', 'websitecontroller@over')->name('over');
+	SimpleRouter::get('/', 'WebsiteController@home')->name('home');
+	SimpleRouter::get('/home', 'WebsiteController@home')->name('home');
+	SimpleRouter::get('/contact', 'WebsiteController@contact')->name('contact');
+	SimpleRouter::get('/privacy', 'WebsiteController@privacy')->name('privacy');
+	SimpleRouter::get('/over', 'WebsiteController@over')->name('over');
 
-	SimpleRouter::get('/inschrijven', 'registercontroller@register')->name('register.form');
-	SimpleRouter::post('/inschrijven/verwerken', 'registercontroller@registerProcess')->name('register.process');
-	SimpleRouter::get('/inschrijven/voltooid', 'registercontroller@registerSucces')->name('register.succes');
-	SimpleRouter::get('/login', 'registercontroller@login')->name('login.form');
-	SimpleRouter::post('/login/verwerken', 'registercontroller@login')->name('login.process');
+	SimpleRouter::get('/inschrijven', 'RegisterController@register')->name('register.form');
+	SimpleRouter::post('/inschrijven/verwerken', 'RegisterController@registerProcess')->name('register.process');
+	SimpleRouter::get('/inschrijven/voltooid', 'RegisterController@registerSucces')->name('register.succes');
+
+	SimpleRouter::get('/login', 'LoginController@login')->name('login.form');
+	SimpleRouter::post('/login/verwerken', 'LoginController@loginProcess')->name('login.process');
+	SimpleRouter::get('/uitloggen', 'LoginController@logout')->name('logout');
+
+	SimpleRouter::post('/getuserdata', 'DataController@getUser')->name('getUser');
 
 	SimpleRouter::get('/not-found', function() {
 		http_response_code(404);

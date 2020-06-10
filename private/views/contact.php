@@ -6,25 +6,13 @@
 Contact
 <?php $this->stop(); ?>
 
-<!-- Navigation -->
-
-<?php $this->start('nav'); ?>
-
-<nav>
-    <h2><a href="<?php echo site_url('/home') ?>">CORENDOG</a></h2>
-    <ul>
-        <li><a href="<?php echo site_url('/home') ?>">Vind vrijwilliger</a></li>
-        <li><a href="<?php echo site_url('/contact') ?>">Contact</a></li>
-        <li><a href="<?php echo site_url('/login') ?>">Login</a></li>
-        <li><a href="<?php echo site_url('/inschrijven') ?>">Word vrijwilliger</a></li>
-    </ul>
-</nav>
-
-<?php $this->stop(); ?>
-
 <!-- Content -->
 
 <?php $this->start('cont'); ?>
+
+<?php if ($showNavigation) { include('nav.php'); echo "found";} ?>
+
+<img class="contactImg" src="<?php echo site_url('/images/detail_images/detail_img2.png') ?>" alt="">
 
 <h1 id="contactTitle">Neem contact op</h1>
 <p id="contactSub">Wil je contact opnemen? We horen graag van u.</p>
@@ -36,20 +24,6 @@ Contact
     <button id="sendContact">Verzend</button>
 </fieldset>
 
-<?php $this->stop(); ?>
-
-<!-- Footer -->
-
-<?php $this->start('footer'); ?>
-
-<footer>
-    <h3>CORENDOG</h3>
-    <p>© Corendon 2020</p>
-    <ul>
-        <li><a href="<?php echo site_url('/over') ?>">Over</a></li>
-        <li><a href="<?php echo site_url('/contact') ?>">Contact</a></li>
-        <li><a href="<?php echo site_url('/privacy') ?>">Privacy verklaring</a></li>
-    </ul>
-</footer>
+<?php if ($showFooter) { include('footer.php'); } ?>
 
 <?php $this->stop(); ?>

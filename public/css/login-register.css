@@ -40,6 +40,7 @@
     font-weight: 300;
     font-size: small;
     vertical-align: top;
+    padding-left: 2px;
 }
 
 .lr_form div {
@@ -65,7 +66,7 @@
 }
 
 .lr_form div input:focus {
-    border: 2px solid rgb(51, 102, 204);
+    border: 1px solid rgb(51, 102, 204);
 }
 
 .lr_form div .hasMore {
@@ -84,12 +85,11 @@
 .lr_form .submit {
     border: 0;
     padding: 1em;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+    width: 100%;
     opacity: .8;
     background: rgb(102, 153, 255);
     color: white;
-    border-radius: 5em;
+    border-radius: .5em;
     cursor: pointer;
     transition: .3s;
     margin-bottom: 1em;
@@ -99,6 +99,27 @@
     opacity: 1;
 }
 
+.lr_form .extra {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2em;
+    color: rgb(78, 78, 78);
+    font-family: 'Roboto', sans-serif;
+    font-weight: thin;
+    font-size: 1em;
+}
+
+.lr_form .extra a {
+    color: rgb(30, 30, 30);
+    text-decoration: none;
+}
+
+.lr_form .extra a:hover {
+    text-decoration: underline;
+}
+
 .formError {
+    padding: 0;
+    margin: 0;
     color: red;
 }

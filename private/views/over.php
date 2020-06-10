@@ -6,28 +6,17 @@
 <?php echo "Over"; ?>
 <?php $this->stop(); ?>
 
-<!-- Navigation -->
-
-<?php $this->start('nav'); ?>
-
-<nav>
-    <h2><a href="<?php echo site_url('/home') ?>">CORENDOG</a></h2>
-    <ul>
-        <li><a href="<?php echo site_url('/home') ?>">Vind vrijwilliger</a></li>
-        <li><a href="<?php echo site_url('/contact') ?>">Contact</a></li>
-        <li><a href="<?php echo site_url('/login') ?>">Login</a></li>
-        <li><a href="<?php echo site_url('/inschrijven') ?>">Word vrijwilliger</a></li>
-    </ul>
-</nav>
-
-<?php $this->stop(); ?>
-
 <!-- Content -->
 
 <?php $this->start('cont'); ?>
 
+<?php if ($showNavigation) { include('nav.php'); } ?>
+
 <h2 id="title">Over ons</h2>
 <p id="over">
+
+<img class="aboutImg" src="<?php echo site_url('/images/detail_images/detail_img1.jpg') ?>" alt="">
+
 Welkom bij Corendog, het zijn moeilijke tijden met het virus Covid-19.
 Hiermee zijn veel mensen bang geworden en durven veel mensen niet over straat omdat zij in het risicogroep bevinden van het virus. 
 Daarom hebben wij van Corendog deze website in elkaar gezet. We zullen u uitleggen hoe de site werkt.
@@ -59,20 +48,6 @@ Alleen samen kunnen wij het virus verslaan. Denk aan elkaar en help elkaar waar 
 <b>Team Corendog</b>
 </p>
 
-<?php $this->stop(); ?>
-
-<!-- Footer -->
-
-<?php $this->start('footer'); ?>
-
-<footer>
-    <h3>CORENDOG</h3>
-    <p>© Corendon 2020</p>
-    <ul>
-        <li><a href="<?php echo site_url('/over') ?>">Over</a></li>
-        <li><a href="<?php echo site_url('/contact') ?>">Contact</a></li>
-        <li><a href="<?php echo site_url('/privacy') ?>">Privacy verklaring</a></li>
-    </ul>
-</footer>
+<?php if ($showFooter) { include('footer.php'); } ?>
 
 <?php $this->stop(); ?>

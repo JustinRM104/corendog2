@@ -12,25 +12,25 @@ function cssCheck($data) {
     return $newData;
 }
 
-function checkPassword($password, $confirmPassword) {
-    $error = NULL;
+function passwordValid($password, $confirmPassword) {
+    $error = "";
 
     if (strlen($password) < 6) { $error = "Het wachtwoord moet minimaal 6 karakters bevatten."; }
-    if ($password != $confirmPassword) { $error = "Ingevoerde wachtwoorden komen niet overeen."; }
-    if ($error) { return $error; }
+    if ($password != $confirmPassword) { $error = $error . "<br> Ingevoerde wachtwoorden komen niet overeen."; }
+    if ($error !== "") { return $error; }
 
     return false;
 }
 
-function emailAvailable($email) {
+function emailAvalaible($email) {
     try {
         $connection = dbConnect();
         $sql = "SELECT * FROM `users` WHERE `email` = :email";
         $stmt = $connection->prepare($sql);
         $stmt->execute(['email' => $email]);
     
-        if ($stmt->rowCount() >= 1) { return true; }
-        return false;
+        if ($stmt->rowCount() >= 1) { return false; }
+        return true;
     } catch (\PDOException $e) {
         return true;
     }
@@ -55,5 +55,46 @@ function createUser($data) {
         return true;
     } catch (\PDOException $e) {
         return false;
+    }
+}
+
+function getUserByEmail($email) {
+    $connection = dbConnect();
+    $sql = "SELECT * FROM `users` WHERE email = :email";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute(['email' => $email]);
+
+    if ($stmt->rowCount() === 1) {
+        return $stmt->fetch();
+    }
+
+    return false;
+}
+
+function getUserById($id) {
+    $connection = dbConnect();
+    $sql = "SELECT * FROM `users` WHERE id = :id";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute(['id' => $id]);
+
+    if ($stmt->rowCount() === 1) {
+        return $stmt->fetch();
+    }
+
+    return false;
+}
+
+function loginCheck() {
+    if (!empty($_SESSION['user_id'])) {
+        return true;
+    }
+
+    return false;
+}
+
+function alreadyLoggedInCheck() {
+    if (loginCheck()) {
+        redirect(url('home'));
+        exit;
     }
 }

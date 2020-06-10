@@ -11,12 +11,16 @@
     <link rel="stylesheet" href="<?php echo site_url('/css/privacy.css') ?>">
     <link rel="stylesheet" href="<?php echo site_url('/css/login-register.css') ?>">
     <link rel="stylesheet" href="<?php echo site_url('/css/over.css') ?>">
+    <link rel="stylesheet" href="<?php echo site_url('/css/home.css') ?>">
+    <link rel="stylesheet" href="<?php echo site_url('/css/userWindow.css') ?>">
+
+    <script src="https://kit.fontawesome.com/98bf757c68.js" crossorigin="anonymous"></script>
 
     <title> <?php echo $this->section('title'); ?> - Corendog</title>
 </head>
 <body>
-    <?php echo $this->section('nav'); ?>
     <?php echo $this->section('cont'); ?>
-    <?php echo $this->section('footer'); ?>
+
+    <script src="<?php echo site_url('/js/profile.js') ?>"></script>
 </body>
 </html

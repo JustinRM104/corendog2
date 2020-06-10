@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.sortings {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10em;
+    width: 80%;
+    box-shadow: 0px 0px 2px grey;
+    border-radius: 5px;
+    height: 40px;
+}
+
+.sortings p {
+    font-family: "Roboto", sans-serif;
+    display: inline-block;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    margin-left: 2em;
+}
+
+.sortings select {
+    height: 30px;
+    border: 1px solid grey;;
+    outline: none;
+    width: 10em;
+    margin-left: 1em;
+    border-radius: 1em;
+    padding-left: 1em;
+    font-family: "Roboto", sans-serif;
+    font-weight: bolder;
+}
+
+.sortings select:hover {
+    box-shadow: 0px 0px 2px grey;
+}
+
+.users-grid {
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 5em;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2em;
+    justify-items: center;
+}
+
+.users-grid div {
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px grey;
+    transition: .4s;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+.users-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 25px;
+}
+
+.users-grid div h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: rgb(51, 102, 204);
+    font-size: 2em;
+    margin-top: .5em;
+    padding-left: 20px;
+}
+
+.users-grid div:hover {
+    box-shadow: 0px 0px 10px grey;
+}
+
+.users-grid .rating {
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: rgb(51, 102, 204);
+    padding: 0;
+    margin: 0;
+    bottom: 10px;
+    right: 10px;
+}
+
+.users-grid .rating .fas {
+    margin-right: 5px;
+}
+
+#loadMore {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5em;
+    width: 150px;
+    background: rgb(102, 153, 255);
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    color: white;
+    border-radius: 5em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#loadMore:hover {
+    transform: scale(1.1);
+}

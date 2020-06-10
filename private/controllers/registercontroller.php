@@ -2,18 +2,17 @@
 
 namespace Website\Controllers;
 
-class registercontroller {
-	public function login() {
-		$template_engine = get_template_engine();	
-		echo $template_engine->render('login');
-	}
-
+class RegisterController {
 	public function register() {
+		alreadyLoggedInCheck();
+
 		$template_engine = get_template_engine();	
-		echo $template_engine->render('inschrijven');
+		echo $template_engine->render('inschrijven', ['showNavigation' => false, 'showFooter' => false]);
 	}
 
 	public function registerProcess() {
+		alreadyLoggedInCheck();
+
 		$errors = [];
 		$data = [
 			'email' => filter_var($_POST["email"], FILTER_VALIDATE_EMAIL),
@@ -29,12 +28,12 @@ class registercontroller {
 		// Check email
 		if ($data['email'] === false) { $errors['email'] = "Het email adress dat u heeft ingevoerd is ongeldig."; }
 		if (!isset($errors['email'])) { 
-			$emailCheck = emailAvailable($data['email']);
-			if ($emailCheck) { $errors['email'] = "Het email adress dat u heeft ingevoerd is al in gebruik."; }
+			$emailCheck = emailAvalaible($data['email']);
+			if (!$emailCheck) { $errors['email'] = "Het email adress dat u heeft ingevoerd is al in gebruik."; }
 		}
 
 		// Check password
-		$passwordCheck = checkPassword($data['password'], $data['confirmPassword']);
+		$passwordCheck = passwordValid($data['password'], $data['confirmPassword']);
 		if ($passwordCheck !== false) { $errors['password'] = $passwordCheck; }
 
 		if (count($errors) === 0) {
@@ -48,11 +47,11 @@ class registercontroller {
 		}
 
 		$template_engine = get_template_engine();	
-		echo $template_engine->render('inschrijven', ['errors' => $errors]);
+		echo $template_engine->render('inschrijven', ['errors' => $errors, 'showNavigation' => false, 'showFooter' => false]);
 	}
 
 	public function registerSucces() {
 		$template_engine = get_template_engine();	
-		echo $template_engine->render('registered');	
+		echo $template_engine->render('registered', ['showNavigation' => false, 'showFooter' => false]);	
 	}
 }

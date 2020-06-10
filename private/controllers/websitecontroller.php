@@ -15,25 +15,25 @@ class WebsiteController {
 
 	public function home() {
 		$template_engine = get_template_engine();	
-		echo $template_engine->render('home');
+		echo $template_engine->render('home', ['showNavigation' => true, 'showFooter' => true]);
 
 	}
 
 	public function contact() {
 		$template_engine = get_template_engine();	
-		echo $template_engine->render('contact');
+		echo $template_engine->render('contact', ['showNavigation' => true, 'showFooter' => true]);
 
 	}
 
 	public function privacy() {
 		$template_engine = get_template_engine();	
-		echo $template_engine->render('privacy');
+		echo $template_engine->render('privacy', ['showNavigation' => true, 'showFooter' => true]);
 
 	}
 
 	public function over() {
 		$template_engine = get_template_engine();	
-		echo $template_engine->render('over');
+		echo $template_engine->render('over', ['showNavigation' => true, 'showFooter' => true]);
 
 	}
 }
