@@ -98,3 +98,18 @@ function alreadyLoggedInCheck() {
         exit;
     }
 }
+
+function getUsers($from, $sort, $location) {
+    try {
+        $connection = dbConnect();
+
+        $sql = "SELECT `id`, `firstname`, `lastname`, `rating`, `picture` FROM `users` WHERE `location` = :location ORDER BY :sort LIMIT " . $from . ",5";
+        $stmt = $connection->prepare($sql);
+        $stmt->execute(['sort' => $sort, 'location' => $location]);
+    
+        if ($stmt->rowCount() >= 1) { return $stmt->fetchAll(); }
+        return "noData";
+    } catch (\PDOException $e) {
+        return "noData";
+    }   
+}

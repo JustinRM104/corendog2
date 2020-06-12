@@ -65,3 +65,36 @@ function get_template_engine() {
 	return new League\Plates\Engine( $templates_path );
 
 }
+
+function normalLocName($shortenedLoc) {
+	$normalLocNames = [
+		'nh' => "Noord-Holland",
+		'zh' => "Zuid-Holland",
+		'lb' => "Limburg",
+		'gr' => "Groningen",
+		'dr' => "Drenthe",
+		'zl' => "Zeeland",
+		'ut' => "Utrecht",
+		'nb' => "Noord-Brabant",
+		'ov' => "Overijssel",
+		'fl' => "Flevoland",
+		'gl' => "Gelderland",
+		'fr' => "Friesland"
+	];
+
+	if ($normalLocNames[$shortenedLoc]) {
+		return $normalLocNames[$shortenedLoc];
+	}
+
+	return $shortenedLoc;
+}
+
+function getUserImage($name) {
+	$public = get_config('WEBROOT');
+
+	if (file_exists($public . "/images/pf_images/" . $name)) {
+		return site_url("/images/pf_images/") . $name;
+	} else {
+		return site_url("/images/pf_images/default.jpg");
+	}
+}

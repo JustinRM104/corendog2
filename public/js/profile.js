@@ -1,59 +1,54 @@
-const userGrid = document.getElementsByClassName("users-grid");
 const myProfile = document.getElementById("myProfile");
 
 let windowOpen = false;
 let currentWindow = null;
+let currentUser = null;
 
-function createWindow() {
-    let window = [];
+function createWindow(user) {
+    let window = document.createElement("div");
 
-    window.holder = document.createElement("div");
-    window.main = document.createElement("div")
-    window.close = document.createElement("button");
-    window.name = document.createElement("h3");
-    window.bio = document.createElement("p");
-    window.img = document.createElement("img");
-    window.location = document.createElement("p");
-    window.rating = document.createElement("p");
+    window.innerHTML = `
+        <div class="innerWindow">
+            <button id="closeWindow" class="far fa-times-circle"></button>
+            <img id="profileImage" src="` + user.picture + `" alt="profielfoto">
+            <h3 class="profileText pbigger"><span class="fas fa-map-marker-alt"><span id="rating"> ` + user.location + `</span></span></h3>
+            <h3 class="profileText">` + user.firstname + ` ` + user.lastname + `  <span class="fas fa-star"><span id="rating">` + user.rating + ` / 10</span></span></h3>
+            <p id="profileBio">` + user.bio + `</p>
+            <div class="formBox">
+                <h3>` + user.firstname + ` uw hond laten uitlaten? Stuur hem een bericht!</h3>
+                <input type="email" name="" id="input" autocomplete="email" placeholder="Uw email adress">
+                <input type="text" name="" id="input" autocomplete="email" placeholder="Uw bericht aan ` + user.firstname + `">
+                <button class="send">Verzend</button>
+            </div>
+            <div class="formBox">
+                <h3>Geef ` + user.firstname + ` een cijfer.</h3>
+                <input type="number" name="" id="input" min="1" max="10" autocomplete="off" placeholder="Cijfer">
+                <button class="send">Voltooi</button>
+            </div>
+        </div>
+    `;
 
-    for (const key in window) {
-        if (key != "holder" && key != "main") {
-            window.main.appendChild(window[key]);
-        }
-    }
-
-    window.holder.appendChild(window.main);
-    window.holder.className = "userWindow";
-    window.bio.className = "bio";
-    window.rating.className = "rating";
-    window.location.className = "bio";
-    window.close.className = "close"
-
+    window.className = "userWindow";
     currentWindow = window;
 
     return window;
 }
 
-function fillUserInfo(window, user) {
-    window.name.innerHTML = "<span>VOORNAAM & ACHTERNAAM</span><br>" + user.firstname + " " + user.lastname;
-    window.close.innerHTML = "SLUIT"
-    window.bio.innerHTML = "<span>BIOGRAFIE</span><br>" + user.bio
-    window.location.innerHTML = "<span>ACTIEVE PROVINCIE</span><br>" + user.location;
-    window.rating.innerHTML = "EERDERE KLANTEN GEVEN " + user.firstname.toUpperCase() + " EEN " + user.rating;
-}
-
-function close() {
-    if (windowOpen) { currentWindow.holder.remove(); windowOpen = false; }
-}
+function close() { if (windowOpen) { currentWindow.remove(); windowOpen = false; } }
 
 function openWindow(user) {
-   let window = createWindow();
-   fillUserInfo(window, user);
-
-   document.body.appendChild(window.holder);
+   let window = createWindow(user);
+   document.body.appendChild(window);
    windowOpen = true;
+   currentUser = user;
 
-   window.close.addEventListener("click", close);
+   let closeButton = document.getElementById("closeWindow");
+   if (closeButton) { closeButton.addEventListener("click", close); }
+}
+
+function url() {
+    if (document.location.hostname == "localhost") { return document.location.origin + "/corendog/public/receivedata"; }
+    return document.location.origin + "/receivedata";
 }
 
 function requestUserData() {
@@ -61,14 +56,13 @@ function requestUserData() {
 
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            if (!windowOpen) { openWindow(JSON.parse(this.response));}
+            if (!windowOpen) {openWindow(JSON.parse(this.response));}
         }
     };
-    
-    let url = document.location.origin + "/corendog/public/getuserdata"
-    request.open("POST", url, true);
+
+    request.open("POST", url(), true);
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    request.send("target=" + this.value);
+    request.send("request=getUser&target=" + this.value);
 }
 
 if (myProfile) { myProfile.addEventListener("click", requestUserData); }

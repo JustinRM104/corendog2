@@ -22,7 +22,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::post('/login/verwerken', 'LoginController@loginProcess')->name('login.process');
 	SimpleRouter::get('/uitloggen', 'LoginController@logout')->name('logout');
 
-	SimpleRouter::post('/getuserdata', 'DataController@getUser')->name('getUser');
+	SimpleRouter::post('/receivedata', 'DataController@receiveData')->name('receiveData');
 
 	SimpleRouter::get('/not-found', function() {
 		http_response_code(404);

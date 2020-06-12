@@ -7,115 +7,116 @@
     left: 0;
     background: rgba(100, 100, 100, 0.5);
 
-    z-index: 20;
+    z-index: 15;
 }
+.userWindow * { z-index: 16; }
 
-.userWindow div {
+.userWindow .innerWindow {
     position: relative;
     margin: 0 auto;
     min-width: 20em;
-    width: 40vw;
+    width: 25vw;
     height: 90vh;
     margin-top: 5vh;
     background: white;
-    border-radius: 1em;
+    border-radius: 20px;
     overflow: auto;
     box-shadow: 0px 0px 2px grey;
-    border: 3px solid rgb(51, 102, 204);
-}
-
-.userWindow * {
-    z-index: 21;
-}
-
-.userWindow h3 {
-    margin: 0;
-    padding: 0;
-    margin-top: 2em;
-    padding-top: 25px;
-    padding-bottom: 5px;
-    padding-left: 25px;
-    width: calc(100% - 50px); 
-
-    color: rgb(51, 102, 204);
     font-family: 'Roboto', sans-serif;
-    font-weight: 1000;
-    font-size: 40px;
+    text-align: center;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;
 }
 
-.userWindow .bio {
-    margin: 0;
-    padding: 0;
-    padding-top: 25px;
-    padding-bottom: 5px;
-    padding-left: 25px;
-
-    color: rgb(30, 30, 30);
-    font-family: "Roboto", sans-serif;
-    font-weight: lighter;
-    font-size: 18px;
-    width: calc(100% - 50px);  
-}
-
-.userWindow .bio span {
-    color: white;
-    font-weight: bolder;
-    font-size: 25px;
-    background: rgb(51, 102, 204);
-    padding-left: 1em;
-    padding-right: 1em;
-    border-radius: 10px;
-    font-family: 'Overlock', sans-serif;
-    margin-bottom: 1em;
-}
-
-.userWindow h3 span {
-    color: white;
-    font-weight: bolder;
-    font-size: 25px;
-    background: rgb(51, 102, 204);
-    padding-left: 1em;
-    padding-right: 1em;
-    border-radius: 10px;
-    font-family: 'Overlock', sans-serif;
-    margin-bottom: 1em;
-}
-
-.userWindow .rating {
-    margin: 0;
-    padding: 10px;
-    margin-left: 25px;
-    margin-top: 5em;
-    display: inline-block;
-
-    color: white;
-    background: rgb(51, 102, 204);
-    font-family: 'Overlock', sans-serif;
-    font-weight: bolder;
-    font-size: 25px;
-    border-radius: 20px;   
-}
-
-.userWindow .close {
+#closeWindow {
     position: absolute;
-    right: 15px;
-    top: 15px;
-    padding: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
+    top: 10px;
+    right: 10px;
+    background: none;
     border: 0;
-    background: red;
-    color: white;
-    border-radius: 10px;
-    outline: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bolder;
     cursor: pointer;
+    font-weight: bolder;
+    font-size: xx-large;
+    color: rgb(102, 153, 255);
+    z-index: 17;
+    transition: .4s;
+    margin: 0;
+    padding: 0;
+    background: white;
+    padding: 5px;
+    border-radius: 5em;
+}
+#closeWindow:hover { transform: scale(1.1); }
+#closeWindow:active { transform: scale(.9); }
+
+#profileImage {
+    width: calc(100% - 30px);
+    margin-top: 15px;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0px 10px 0px rgb(102, 153, 255);
+}
+
+.profileText { margin: 0 auto; margin-top: 30px; color: rgb(45, 45, 45); font-size: x-large; width: calc(100% - 30px); }
+.pbigger { font-size: xx-large; }
+
+#profileBio {
+    margin: 0 auto; margin-top: 30px; color: rgb(45, 45, 45); font-size: large; width: calc(100% - 30px);   
+}
+
+.formBox {
+    width: calc(100% - 30px);
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0px 0px 2px grey;
+    border-radius: 15px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    color: rgb(45, 45, 45);
+}
+
+.formBox #input {
+    width: calc(100% - 50px);
+    border: 1px solid rgb(80, 80, 80);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.formBox #input:focus { border: 1px solid rgb(102, 153, 255); }
+
+.formBox h3 {
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.formBox button {
+    width: calc(100% - 30px);
+    border: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
     opacity: .8;
+    background: rgb(102, 153, 255);
+    color: white;
+    border-radius: .5em;  
+    cursor: pointer;
     transition: .4s;
 }
 
-.userWindow .close:hover {
+.formBox button:hover {
     opacity: 1;
-    transform: scale(1.1);
 }
+
+.profileText #rating { margin-left: 5px; font-family: 'Roboto', sans-serif; }
+.profileText .fa-star { margin-left: 10px; background: rgb(102, 153, 255); border-radius: 10px; padding: 10px; color: white; }
+.profileText .fa-map-marker-alt { margin-left: 10px; background: rgb(102, 153, 255); border-radius: 10px; padding: 10px; color: white; }

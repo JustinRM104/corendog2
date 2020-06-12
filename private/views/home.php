@@ -16,7 +16,7 @@
     <div>
         <p>Sorteer op:</p>
         <select id="sort">
-            <option value="name" default>Naam</option>
+            <option value="firstname" default>Naam</option>
             <option value="rating" default>Rating</option>
         </select>
         <p>Provincie:</p>
@@ -37,67 +37,7 @@
     </div>
 </div>
 
-<div class="users-grid">
-    <div>
-        <img src="https://www.wenabv.com/wp-content/uploads/2018/04/User-placeholder.jpg" alt="profiel foto">
-        <h3>Naam</h3>
-        <p class="rating"><span class="fas fa-star "></span>5.0 / 10.0</p>
-    </div>
-    <div>
-        <img src="https://www.wenabv.com/wp-content/uploads/2018/04/User-placeholder.jpg" alt="profiel foto">
-        <h3>Naam</h3>
-        <p class="rating"><span class="fas fa-star "></span>5.0 / 10.0</p>
-    </div>
-    <div>
-        <img src="https://www.wenabv.com/wp-content/uploads/2018/04/User-placeholder.jpg" alt="profiel foto">
-        <h3>Naam</h3>
-        <p class="rating"><span class="fas fa-star "></span>5.0 / 10.0</p>
-    </div>
-    <div>
-        <img src="https://www.wenabv.com/wp-content/uploads/2018/04/User-placeholder.jpg" alt="profiel foto">
-        <h3>Naam</h3>
-        <p class="rating"><span class="fas fa-star "></span>5.0 / 10.0</p>
-    </div>
-    <div>
-        <img src="https://www.wenabv.com/wp-content/uploads/2018/04/User-placeholder.jpg" alt="profiel foto">
-        <h3>Naam</h3>
-        <p class="rating"><span class="fas fa-star "></span>5.0 / 10.0</p>
-    </div>
-    <div>
-        <img src="https://www.wenabv.com/wp-content/uploads/2018/04/User-placeholder.jpg" alt="profiel foto">
-        <h3>Naam</h3>
-        <p class="rating"><span class="fas fa-star "></span>5.0 / 10.0</p>
-    </div>
-    <div>
-        <img src="https://www.wenabv.com/wp-content/uploads/2018/04/User-placeholder.jpg" alt="profiel foto">
-        <h3>Naam</h3>
-        <p class="rating"><span class="fas fa-star "></span>5.0 / 10.0</p>
-    </div>
-    <div>
-        <img src="https://www.wenabv.com/wp-content/uploads/2018/04/User-placeholder.jpg" alt="profiel foto">
-        <h3>Naam</h3>
-        <p class="rating"><span class="fas fa-star "></span>5.0 / 10.0</p>
-    </div>
-    <div>
-        <img src="https://www.wenabv.com/wp-content/uploads/2018/04/User-placeholder.jpg" alt="profiel foto">
-        <h3>Naam</h3>
-        <p class="rating"><span class="fas fa-star "></span>5.0 / 10.0</p>
-    </div>
-    <div>
-        <img src="https://www.wenabv.com/wp-content/uploads/2018/04/User-placeholder.jpg" alt="profiel foto">
-        <h3>Naam</h3>
-        <p class="rating"><span class="fas fa-star "></span>5.0 / 10.0</p>
-    </div>
-    <div>
-        <img src="https://www.wenabv.com/wp-content/uploads/2018/04/User-placeholder.jpg" alt="profiel foto">
-        <h3>Naam</h3>
-        <p class="rating"><span class="fas fa-star "></span>5.0 / 10.0</p>
-    </div>
-    <div>
-        <img src="https://www.wenabv.com/wp-content/uploads/2018/04/User-placeholder.jpg" alt="profiel foto">
-        <h3>Naam</h3>
-        <p class="rating"><span class="fas fa-star "></span>5.0 / 10.0</p>
-    </div>
+<div class="users-grid" id="users-grid">
 </div>
 
 <button id="loadMore">

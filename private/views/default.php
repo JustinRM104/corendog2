@@ -22,5 +22,6 @@
     <?php echo $this->section('cont'); ?>
 
     <script src="<?php echo site_url('/js/profile.js') ?>"></script>
+    <script src="<?php echo site_url('/js/userloader.js') ?>"></script>
 </body>
 </html
